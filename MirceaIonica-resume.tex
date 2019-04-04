@@ -1,0 +1,208 @@
+% resume.tex
+% vim:set ft=tex spell:
+
+\documentclass[10pt,letterpaper]{article}
+\usepackage[letterpaper,margin=0.75in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{mdwlist}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{tgpagella}
+\usepackage{hyperref}
+
+\pagestyle{empty}
+\setlength{\tabcolsep}{0em}
+
+\graphicspath{ {./images/} }
+
+% indentsection style, used for sections that aren't already in lists
+% that need indentation to the level of all text in the document
+\newenvironment{indentsection}[1]%
+{\begin{list}{}%
+	{\setlength{\leftmargin}{#1}}%
+	\item[]%
+}
+{\end{list}}
+
+% opposite of above; bump a section back toward the left margin
+\newenvironment{unindentsection}[1]%
+{\begin{list}{}%
+	{\setlength{\leftmargin}{-0.5#1}}%
+	\item[]%
+}
+{\end{list}}
+
+% format two pieces of text, one left aligned and one right aligned
+\newcommand{\headerrow}[2]
+{\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
+	#1 &
+	#2 \\
+\end{tabular*}}
+
+% make "C++" look pretty when used in text by touching up the plus signs
+\newcommand{\CPP}
+{C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize\bf ++}}
+
+% make "C#" look pretty when used in text by touching up the plus signs
+\newcommand{\Csharp}
+{C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize\bf \#}}
+
+% and the actual content starts here
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{Mircea Ionica}}
+
+Sibiu\ \ \textbullet\ \ Romania
+\\
+0040.xxxxxx.xxx\ \ \textbullet
+\ \ \url{https://www.linkedin.com/in/mircea-ionica/}
+\end{center}
+
+%\includegraphics[scale=0.275]{tags}
+
+\hrule
+\vspace{-0.4em}
+\subsection*{Experience}
+
+\begin{itemize}
+	\parskip=0.1em
+
+  \item
+	\headerrow
+		{\textbf{Freelancer}}
+		{\textbf{Sibiu, Romania}}
+	\\
+	\headerrow
+		{\emph{Expert Software Developer, Software Architect, Agile Team Leader}}
+		{\emph{2016 -- present}}
+	\begin{itemize*}
+		\item Coordinating a cross-functional Agile Team
+		\item Involved in architectural decisions and decompositions for ADAS related SW (Classic AUTOSAR)
+		\item Design, implement and test Classic AUTOSAR DLT BSW module (C)
+		\item Design, implement and test Adaptive AUTOSAR Applications (\CPP)
+		\item Design, implement and test Software Components - SWC (C)
+	\end{itemize*}
+
+
+  \item
+	\headerrow
+		{\textbf{3Soft Automotive SRL}}
+		{\textbf{Sibiu, Romania}}
+	\\
+	\headerrow
+		{\emph{Senior Software Developer}}
+		{\emph{2015 -- 2016}}
+	\begin{itemize*}
+		\item Maintenance, development and bug fixing ZF’s Middleware Library for various transmission ECU (TCU) projects (C).
+		\item Requirements analysis and implementation from both the customer (ZF) and OEMs (e.g. BMW).
+		\item AUTOSAR communication stack configuration and adaptation (CAN and FlexRay).
+		\item UDS (ISO 14229-1- 2013) diagnostic routines and DIDs configuration. Analyse UDS implementation (NRC handling for all services).
+		\item Implementing system tests (python).
+	\end{itemize*}
+
+	\item
+	\headerrow
+		{\textbf{Visteon Electronics GmbH}}
+		{\textbf{Monheim am Rhein, Germany}}
+	\\
+	\headerrow
+		{\emph{Consultant - Senior Software Developer}}
+		{\emph{2014 -- 2014}}
+	\begin{itemize*}
+		\item Bug-fixing Autosar SWCs for the VW instrument cluster, MQB platform (C).
+		\item Implementing costumer requirements (C).
+	\end{itemize*}
+
+
+	\item
+	\headerrow
+		{\textbf{Bosch Car Multimedia GmbH}}
+		{\textbf{Hildesheim, Germany}}
+	\\
+	\headerrow
+		{\emph{Consultant - Senior Software Developer}}
+		{\emph{2014 -- 2014}}
+	\begin{itemize*}
+		\item Bug-fixing Autosar SWCs for the Gen3 car radio (C).
+		\item Implemented reset and wakeup sources monitoring (V850) (C).
+		\item Defined the concept and implemented the exception handling for V850.
+	\end{itemize*}
+
+
+	\item
+	\headerrow
+		{\textbf{3Soft Automotive SRL}}
+		{\textbf{Sibiu, Romania}}
+	\\
+	\headerrow
+		{\emph{Senior Software Developer}}
+		{\emph{2012 -- 2014}}
+	\begin{itemize*}
+		\item Designed, developed and coordinated the AUTOSAR Xcp slave module (C).
+		\item Performed integration tests with CANape.
+		\item Implemented a plugin for an Eclipse based AUTOSAR BSW configurator to generate
+		ORTI files based on the system description (Java).
+		\item Offered customer support with Xcp technical issues.
+	\end{itemize*}
+
+	\item
+	\headerrow
+		{\textbf{Continental Automotive Systems SRL }}
+		{\textbf{Sibiu, Romania}}
+	\\
+	\headerrow
+		{\emph{Summer Intern, Junior Software Developer, Software Developer}}
+		{\emph{2007 -- 2012}}
+	\begin{itemize*}
+		\item Implemented an automatic test framework (\Csharp).
+		\item Maintained and integrated the AUTOSAR memory stack into the legacy ECU SW (C);		.
+		\item AUTOSAR MCAL development for TI and Freescale uC (C).
+		\item Maintenance, configuration management, debugging, testing and release management of existing embedded application (Electronic Brake System) - mostly for hardware related software
+		\item Planned and performed system tests (HIL and SIL).
+		\item Trainer for Autosar Memory Stack and V-Cycle development.
+		\item Implemented a wizard to configure the ECU’s entire NV memory stack starting from the legacy configuration end ending up with the AUTSAR memory stack (Java).
+		\item Implemented a tool to fetch MKS (now known as PTC) requirements from the server, translate them, and upload them back (Java).
+		\item Implemented a prototype for employee’s training database (Javascript).
+	\end{itemize*}
+
+\end{itemize}
+
+
+\hrule
+\vspace{-0.4em}
+\subsection*{Education}
+
+\begin{itemize}
+	\parskip=0.1em
+
+	\item 
+	\headerrow
+		{\textbf{Lucian Blaga State University}}
+		{\textbf{Sibiu, Romania}}
+	\\
+	\headerrow
+		{\emph{Faculty of Engineering, B.S. Computer Science}}
+		{\emph{2003 -- 2008}}
+
+\end{itemize}
+
+
+\hrule
+\vspace{-0.4em}
+\subsection*{Core Technical Skills}
+
+\begin{indentsection}{\parindent}
+\hyphenpenalty=1000
+\begin{description*}
+	\item[Languages:]
+	C (expert), \CPP (proficient), Java (prior experience), \Csharp (prior experience), python (prior experience)
+	\item[Methods:]
+	Agile, Design Patterns, Clean Code, Clean Architecture, SOLID principles, OCI containers
+	\item[Tools:]
+	Canape, Canoe, git, PTC, Doors, WinIdea Genivi Dlt Viewer, Tresos, DaVinci, Eclipse, Visual Studio Code, too many to mention :) 
+\end{description*}
+\end{indentsection}
+
+\end{document}
